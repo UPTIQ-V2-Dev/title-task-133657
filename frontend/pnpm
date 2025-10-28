@@ -1,0 +1,42 @@
+#!/bin/bash
+# pnpm wrapper script that uses npm instead
+
+# Map pnpm commands to npm equivalents
+case "$1" in
+    "install")
+        shift
+        npm install "$@"
+        ;;
+    "build")
+        shift
+        npm run build "$@"
+        ;;
+    "dev")
+        shift
+        npm run dev "$@"
+        ;;
+    "preview")
+        shift
+        npm run preview "$@"
+        ;;
+    "eslint")
+        shift
+        npm run lint "$@"
+        ;;
+    "prettier")
+        shift
+        npm run prettier "$@"
+        ;;
+    "add")
+        shift
+        npm install "$@"
+        ;;
+    "remove")
+        shift
+        npm uninstall "$@"
+        ;;
+    *)
+        # For any other command, try to run it with npm run
+        npm run "$@"
+        ;;
+esac
