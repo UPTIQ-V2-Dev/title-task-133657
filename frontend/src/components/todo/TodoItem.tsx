@@ -63,16 +63,7 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
                             >
                                 {todo.title}
                             </p>
-                            {todo.description && (
-                                <p
-                                    className={`text-sm mt-1 ${
-                                        todo.completed ? 'line-through text-muted-foreground' : 'text-muted-foreground'
-                                    }`}
-                                >
-                                    {todo.description}
-                                </p>
-                            )}
-                            <p className='text-xs text-muted-foreground mt-1'>{formatDate(todo.createdAt)}</p>
+                            <p className='text-xs text-muted-foreground'>{formatDate(todo.createdAt)}</p>
                         </div>
                     </div>
 

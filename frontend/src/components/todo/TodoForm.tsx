@@ -4,7 +4,6 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, Plus } from 'lucide-react';
 import { todoService } from '@/services/todoService';
@@ -25,8 +24,7 @@ export const TodoForm = ({ onSuccess }: TodoFormProps) => {
     } = useForm<TodoFormData>({
         resolver: zodResolver(todoFormSchema),
         defaultValues: {
-            title: '',
-            description: ''
+            title: ''
         }
     });
 
@@ -58,18 +56,6 @@ export const TodoForm = ({ onSuccess }: TodoFormProps) => {
                         disabled={createTodoMutation.isPending}
                     />
                     {errors.title && <p className='text-sm text-red-600'>{errors.title.message}</p>}
-                </div>
-
-                <div className='space-y-2'>
-                    <Label htmlFor='description'>Description (optional)</Label>
-                    <Textarea
-                        id='description'
-                        placeholder='Add a description...'
-                        {...register('description')}
-                        disabled={createTodoMutation.isPending}
-                        rows={3}
-                    />
-                    {errors.description && <p className='text-sm text-red-600'>{errors.description.message}</p>}
                 </div>
 
                 <Button

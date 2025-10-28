@@ -50,14 +50,12 @@ export const mockTodos: Todo[] = [
     {
         id: '1',
         title: 'Learn React',
-        description: 'Complete the React tutorial and understand hooks, components, and state management',
         completed: false,
         createdAt: new Date().toISOString()
     },
     {
         id: '2',
         title: 'Build a todo app',
-        description: 'Create a full-featured todo application with CRUD operations',
         completed: true,
         createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
     },

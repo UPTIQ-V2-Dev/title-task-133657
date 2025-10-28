@@ -12,7 +12,7 @@
 
 ## Application Overview
 
-Simple todo app with a form containing title and description fields for creating todos.
+Simple todo app with a single form containing only a title field for creating todos.
 
 ## Page-by-Page Implementation Plan
 
@@ -21,7 +21,7 @@ Simple todo app with a form containing title and description fields for creating
 **Components:**
 
 - `TodoApp` (main container component)
-- `TodoForm` (form with title and description inputs)
+- `TodoForm` (form with title input)
 - `TodoList` (displays all todos)
 - `TodoItem` (individual todo item with delete/toggle)
 
@@ -32,7 +32,7 @@ Simple todo app with a form containing title and description fields for creating
 
 **Types:**
 
-- `Todo` interface (id, title, description, completed, createdAt)
+- `Todo` interface (id, title, completed, createdAt)
 - `CreateTodoRequest` type
 - `TodoFormData` type
 
@@ -60,7 +60,6 @@ Simple todo app with a form containing title and description fields for creating
 - Use existing shadcn components:
     - `Button` for form submit and todo actions
     - `Input` for title field
-    - `Textarea` for description field
     - `Card` for todo items
     - `Checkbox` for todo completion status
     - `Alert` for error/success messages
@@ -156,7 +155,7 @@ src/
 
 ## Key Features
 
-- Simple form with title and optional description inputs
+- Simple form with title input only
 - Real-time todo list updates
 - Todo completion toggle
 - Todo deletion
